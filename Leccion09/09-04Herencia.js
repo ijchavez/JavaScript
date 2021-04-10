@@ -3,8 +3,8 @@
 class Persona{
     constructor(nombre, apellido,){
         //'atributo de nuestra clase' = 'parametro';
-        this.nombre = nombre;
-        this.apellido = apellido;
+        this._nombre = nombre;
+        this._apellido = apellido;
 
     }
     get nombre(){

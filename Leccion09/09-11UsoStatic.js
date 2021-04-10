@@ -1,11 +1,16 @@
 //Agregamos metodo toString()
 
 class Persona{
+
+    /* Los atributos estaticos se asocian con nuestra clase y los atributos no estaticos
+    vamos a poder utilizarlos solamente si creamos objetos de la clase que estamos declarando */
+    static contadorPersonas = 0; //Atributo de nuestros objetos
     // Definimos el constructor
     constructor(nombre, apellido,){
         //'atributo de nuestra clase' = 'parametro';
         this._nombre = nombre;
         this._apellido = apellido;
+        this._idPersona = ++ Persona.contadorPersonas;
 
     }
     //Definimos SET y GET
@@ -27,7 +32,7 @@ class Persona{
     }
     // Sobreescribimos la clase Object
     nombreCompleto(){
-        let cadena = this._nombre + ' ' + this._apellido;
+        let cadena = this._idPersona + ' ' + this._nombre + ' ' + this._apellido;
         return cadena;
 
     }
@@ -38,6 +43,15 @@ class Persona{
         return cadena;
 
     }
+    static saludar(){
+        console.log('Saludos desde metodo static')
+    
+    }
+    static saludardos(persona){
+        console.log(persona.nombreCompleto());
+
+    }
+
 
 }
 
@@ -68,10 +82,17 @@ class Empleado extends Persona{
     }
 
 }
+
+
+
 let persona1 = new Persona('Jorge', 'Barrios');
-console.log(persona1.toString());
-
 let empleado1 = new Empleado('Juan','Perez','Sistemas')
-console.log(empleado1.nombreCompleto());
 
+console.log(persona1.toString());
 console.log(empleado1.toString());
+
+console.log(Persona.contadorPersonas);
+
+let persona2 = new Persona('Karla', 'Ramirez');
+console.log(persona2.toString());
+console.log(Persona.contadorPersonas);

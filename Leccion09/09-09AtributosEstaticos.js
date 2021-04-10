@@ -6,8 +6,8 @@ class Persona{
     // Definimos el constructor
     constructor(nombre, apellido,){
         //'atributo de nuestra clase' = 'parametro';
-        this.nombre = nombre;
-        this.apellido = apellido;
+        this._nombre = nombre;
+        this._apellido = apellido;
         Persona.contadorObjetosPersona ++;
         console.log('Se ha creado una persona ' + Persona.contadorObjetosPersona)
 
