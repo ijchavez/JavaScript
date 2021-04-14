@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manejo DOM JS</title>
+</head>
+<body>
+    <h1 onmousedown='rojo(this)' onmouseup='azul(this)' onclick='verde(this)'>
+        Manejo DOM con JS
+    </h1>
+    <div id='mostrar'></div>
+    <br/>
+    <script>
+        function rojo(titulo){
+            console.log('onmousedown ahora esta en rojo')
+            titulo.style.color = 'red';
+
+        }
+        function azul(titulo){
+            console.log('onmouseup ahora esta en azul')
+            titulo.style.color = 'blue';
+
+        }
+        function verde(titulo){
+            console.log('onclick ahora esta en verde')
+            titulo.style.color = 'green';
+
+        }
+    </script>
+</body>
+</html>

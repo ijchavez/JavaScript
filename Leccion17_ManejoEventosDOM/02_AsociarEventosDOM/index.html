@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manejo DOM JS</title>
+</head>
+<body>
+    <h1 onclick ='cambiarTexto(this)'>Manejo DOM con JS</h1>
+    
+    <br/>
+    <script>
+        //el elemento this contiene todo el objeto. A traves de el accedo a la propiedad innerHTML
+        //para cambiar el contenido del mismo
+        function cambiarTexto(titulo){
+            console.log(titulo);
+            console.log(titulo.innerHTML);
+            titulo.innerHTML = 'Cambiamos el titulo';
+            console.log(titulo.innerHTML);
+            
+        }
+    </script>
+</body>
+</html>

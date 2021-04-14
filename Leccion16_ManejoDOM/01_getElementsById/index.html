@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejemplo DOM JavaScript</title>
+</head>
+<body>
+    <h1 id='cabecero'>Ejemplo DOM con Javascript</h1>
+    <p id='parrafo'>Saludos!</p>
+    <script>
+        //Busqueda por ID
+        let cabecero = document.getElementById('cabecero');
+        console.log('valor cabecero: ' + cabecero.innerHTML);
+        let parrafo = document.getElementById('parrafo').innerHTML;
+        console.log('valor parrafo: ' + parrafo);
+        console.log('Saludos desde JavaScript')
+    </script>
+</body>
+</html>

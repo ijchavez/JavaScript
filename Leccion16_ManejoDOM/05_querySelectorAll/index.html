@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styles/style.css">
+    <title>Ejemplo DOM JavaScript</title>
+</head>
+<body>
+    <h1 class = 'azul' id = 'cabecero'>Ejemplo DOM con Javascript</h1>
+    <p class = 'azul' id = 'parrafo1'>Saludos!</p>
+    <p class = 'azul' id = 'parrafo2'>Otro Parrafo</p>
+
+    <script>
+        //document.querySelectorAll('tipoDeElemento.clase');
+        let elementos = document.querySelectorAll('p.azul');
+        console.log(`Numero de elementos: ${elementos.length}`);
+        for (let elemento of elementos){
+            console.log(`${elemento.innerHTML}`);
+
+        }
+
+    </script>
+</body>
+</html>

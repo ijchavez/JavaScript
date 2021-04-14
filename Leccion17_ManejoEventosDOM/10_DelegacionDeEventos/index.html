@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manejo DOM JS</title>
+</head>
+<body>
+    <h1 id ='titulo'>
+        Manejo DOM con JS
+    </h1>
+    <div id='mostrar'></div>
+    <br/>
+    <form id='forma'>
+        Nombre: <input type="text" id='nombre'/>
+        <br/>   <br/>
+        Apellido: <input type="text" id='apellido'/>
+
+    </form>
+
+    <script>
+        //creo un formulario, creo una variable o constante
+        // y quito document.getElementById('nombre') y document.getElementById('apellido')
+        // ya que de esta manera uso la variable o constante creada y los objetos dentro van a
+        // usar estos cambios de acuerdo a la funcion que haga pasandole el parametro true luego de la funcion
+
+        const forma = document.getElementById('forma');
+        //Funcion Flecha no se puede reutilizar
+        forma.addEventListener('focus', (evento) => {
+            evento.target.style.background = 'yellow';
+
+        }, true);
+        forma.addEventListener('blur', (evento) => {
+            evento.target.style.background = 'white';
+
+        }, true);
+    </script>
+</body>
+</html>

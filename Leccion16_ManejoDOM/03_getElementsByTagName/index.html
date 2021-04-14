@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejemplo DOM JavaScript</title>
+</head>
+<body>
+    <h1 id='cabecero'>Ejemplo DOM con Javascript</h1>
+    <p id='parrafo1'>Saludos!</p>
+    <p id='parrafo2'>Otro Parrafo</p>
+
+    <script>
+        // busqueda por TagName
+        let parrafos = document.getElementsByTagName('p');
+        console.log(`Numero parrafos: ${parrafos.length}`);
+        for (let i = 0; i < parrafos.length; i++){
+            console.log(`Parrafo ${i}: ${parrafos[i].innerHTML}`);
+        }
+
+    </script>
+</body>
+</html>

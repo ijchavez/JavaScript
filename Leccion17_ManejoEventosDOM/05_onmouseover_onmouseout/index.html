@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manejo DOM JS</title>
+</head>
+<body onload='entrar()'>
+    <h1 onmouseover='rojo(this)' onmouseout='azul(this)'>
+        Manejo DOM con JS
+    </h1>
+    <div id='mostrar'></div>
+    <br/>
+    <script>
+        //Dentro del this entro al estilo y color y lo cambio
+        function rojo(titulo){
+            titulo.style.color = 'red';
+
+        }
+        function azul(titulo){
+            titulo.style.color = 'blue';
+
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manejo DOM JS</title>
+</head>
+<body>
+    <h1 id='titulo'>Manejo DOM con JS</h1>
+    <div id='mostrar'>
+
+    </div>
+    <br/>
+    <script>
+        //igualo a una funcion callback
+        document.getElementById('titulo').onclick = cambiarTexto;
+        //creo la funcion callback para que en el id = 'mostrar' muestre el nuevo contenido
+        //al hacer click sobre el documento
+        function cambiarTexto(){
+            let nuevoTitulo = 'Nuevo contenido';
+            document.getElementById('mostrar').innerHTML = nuevoTitulo;
+
+        }
+    </script>
+</body>
+</html>
