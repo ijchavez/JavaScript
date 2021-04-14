@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+
+    <title>Aplicacion Calculadora</title>
+  </head>
+  <body>
+    <div class="container">
+         <h1>Aplicacion Calculadora</h1>
+         <form id ='forma'>
+               <!-- 
+                 Manejo de espacios y botones en Bootstrap:
+                 https://getbootstrap.com/docs/5.0/utilities/spacing/
+                 https://getbootstrap.com/docs/5.0/components/buttons/
+              -->
+            <div class ='mb-3'>
+              <label for = 'operando A'> Operando A</label>
+              <input type="number" class="form-control" placeholder='Escribe el operando A', id='operandoA'/>
+
+
+            </div>
+            <div class ='mb-3'>
+              <label for = 'operando B'> Operando B</label>
+              <input type="number" class="form-control" placeholder='Escribe el operando B', id='operandoB'/>
+              
+            </div>
+
+         </form>
+         <div>
+          <button class ='btn btn-primary mb-3'onclick='sumar()'>Sumar</button>
+          <button class ='btn btn-secondary mb-3'onclick='restar()'>Restar</button>
+          <button class ='btn btn-outline-primary mb-3'onclick='multiplicar()'>Multiplicar</button>
+          <button class ='btn btn-outline-secondary mb-3'onclick='dividir()'>Dividir</button>
+         </div>
+         <div>
+          <button class ='btn btn-secondary mb-3'onclick='exponente()'>Exponente</button>
+          <button class ='btn btn-outline-primary mb-3'onclick='modulo()'>Modulo</button>
+         </div>
+
+         <div id = 'resultado'></div>
+    </div>
+ 
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script>
+    <script src='./js/app.js'></script>
+  </body>
+</html>
