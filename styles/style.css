@@ -1,0 +1,107 @@
+body{
+    background-image: url('../images/1555147.png');
+    font-family: 'Roboto Mono', monospace;
+    font-size: 12px;
+}
+.caja{
+    background-size: cover;
+    border-radius: 10px;
+    margin: 10px;
+    box-sizing: border-box;
+    color: white;
+}
+.uno {
+    width: 938px;
+    height: 200px;
+    display: inline-block;
+    text-align: center;
+    
+}
+.calc{
+    background-image: url('../images/calc.jpg');
+    background-size: cover;
+
+}
+.listper{
+    background-image: url('../images/listado_personas.jpeg');
+    background-size: cover;
+}
+.reloj{
+    background-image: url('../images/reloj_digital1.jpg');
+    background-size: cover;
+}
+.presupuesto{
+    background-image: url('../images/presupuesto-.jpg');
+    background-size: cover;
+
+}
+.presucol{
+    background-color: rgba(211, 211, 211, 0.596);
+    height: 200px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+}
+.bloquea{
+    width: 960px;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    margin-left: auto;
+    margin-right: auto;
+
+}
+.resp{
+    border-radius: 10px;
+    width: auto;
+    height: 200px;
+    color: black;
+    border: 1px solid yellow;
+
+}
+
+.title{
+    text-align: center;
+    color:white;
+
+}
+.title-lp{
+    text-align: center;
+    color:black;
+    font-size: 19px;
+
+}
+.title-pre{
+    text-align: center;
+    color:black;
+    font-size: 19px;
+
+}
+
+.links{
+    text-decoration: none;
+    color :white;
+    font-size: 20px;
+
+}
+.links-lp{
+    text-decoration: none;
+    color :black;
+    font-size: 20px;
+
+}
+.links-pre{
+    text-decoration: none;
+    color :black;
+    font-size: 20px;
+
+}
+.links:hover{
+    color:skyblue;
+}
+.links-lp:hover{
+    color:red;
+}
+.links-pre:hover{
+    color:green;
+}
