@@ -1,0 +1,51 @@
+const creoId = (b) =>{
+    const valor = b.id;
+    let resultado = '';
+    switch(valor){
+        case "rojo":
+            resultado = "rojo";
+            break;
+
+        case "amarillo":
+            resultado = "amarillo";
+            break;
+
+        case "azul":
+            resultado = "azul";
+            break;
+
+        case "verde":
+            resultado = "verde";
+            break;
+
+        case "violeta":
+            resultado = "violeta";
+            break;
+
+        case "marron":
+            resultado = "marron";
+            break;
+
+        case "rosa":
+            resultado = "rosa";
+            break;
+
+        case "negro":
+            resultado = "negro";
+            break;
+
+        case "naranja":
+            resultado = "naranja";
+            break;
+
+        case "celeste":
+            resultado = "celeste";
+            break;
+
+    }
+    //console.log(resultado + ' tipo: ' + typeof(resultado));
+    //console.log(valor + ' tipo: ' + typeof(valor));
+    
+    return resultado;
+
+}

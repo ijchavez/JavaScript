@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style/styles.css">
+    <link rel="stylesheet" href="./style/normalize.css">
+    <script type="text/javascript">
+    </script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+        </style>
+    <title>Color Game</title>
+</head>
+<body>
+  <section class='show app'>
+    <div id="inicio_juego" class="modal-container">
+      <div class="blur-modal"></div>
+      <div class="modal">
+        <h2 class="modal-title">Color Game</h2>
+        <input id="nombre_jugador" class="modal-input" type="text" placeholder="Introduce tu nombre">
+        <button class="modal-button" onclick="accionModalInicio()">
+          <a id="pop_up" href="#popup" class="textbtn">Comenzar Juego</a>
+        
+        </button>
+        <div id="popup" class="overlay">
+
+        </div>
+      </div>
+    </div>
+  </section>
+  <section id ='juego'class="hide">
+
+    <div class='basico'>
+         <div class="datos">
+        <!--Aca va el nombre y puntaje-->
+            <h3 class="nombre-usuario" id="nombre_usuario"'></h3>
+            <span id="countdown">Tiempo: </span>
+        </div>
+
+    </div>        
+      <div class='tituloppal'>
+         <h1>Color Game</h1>
+       </div>
+      <div class="texto" id='texto'>
+        <!--Aca va el titulo con su color-->
+      </div>
+      <div id ='eleccion'class="eleccion">
+
+      </div>
+      <div>
+        <button id ="inicio-del-juego"class='modal-button inicio_juego'onclick="cambioEstadoActivoReloj()">Inicio Juego</button>
+      </div>
+      
+      
+  </section>
+  <div id="fin_juego" class="modal-container-lose hide">
+    <div class="blur-modal"></div>
+    <div class="modal-lose">
+      <h2 class="modal-title">Color Game</h2>
+      <p id="puntaje"></p>
+      <div>
+        <button class="modal-button-go" onclick="accionModalFin()">Jugar de nuevo</button>
+      </div>
+      <div>
+        <button class="modal-button-go" id = 'menuppal'onclick= 'loseMenuPrincipal()'>Volver al Menú Principal</button>
+      </div>
+    </div>
+  </div>
+    <script src="./js/index.js"></script>
+</body>
+</html>

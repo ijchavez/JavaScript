@@ -1,0 +1,152 @@
+const coloresTitulo = ['red', 'yellow', 'blue', 'green', 'violet', 'brown', 'plum', 'black', 'orange', 'skyblue'];
+const coloresNombre = ['Rojo', 'Amarillo', 'Azul', 'Verde', 'Violeta', 'Marrón', 'Rosa', 'Negro', 'Naranja', 'Azul'];
+
+
+function elementoPorId(id){
+    const elemento = document.getElementById(id);
+    return elemento
+
+}
+const ocultarElemento = (elementoDOM) => {
+	elementoDOM.classList.add("hide");
+	elementoDOM.classList.remove("show");
+  }
+  const mostrarElemento = (elementoDOM) => {
+	elementoDOM.classList.add("show");
+	elementoDOM.classList.remove("hide");
+  }
+function obtenerElementoAleatorio(array){
+    for (var n = 0; n < array.length; n++) {
+            let i = Math.floor(Math.random() * array.length);
+            array[i]
+            return array[i];
+
+    }
+}
+function insertoH2(id){
+    const titulo = elementoPorId(id);
+    const color = obtenerElementoAleatorio(coloresTitulo);
+    const nombre = obtenerElementoAleatorio(coloresNombre);
+    titulo.innerHTML = `
+    <h2 class="titulo ${color}"
+    id="titulo">${nombre}
+    </h2>
+    `;
+
+}
+function insertoPuntaje(id){
+    const elementoPuntaje = elementoPorId(id);
+    const puntaje = calculoPuntaje();
+    elementoPuntaje.innerHTML = `
+    <h4 class="nombre-usuario">
+    Puntaje: ${puntaje}
+    </h4>
+    `;
+
+}
+function calculoPuntaje(){
+    let puntaje = 0;
+    puntaje += puntaje;
+    return puntaje;
+
+}
+
+function comparoColores(){
+    let colorTitulo = obtengoColor('titulo', 'color');
+    console.log("color del titulo: " + colorTitulo);
+    let colorElegido = obtengoColor(creoId(), 'background-color');
+    console.log("color del boton: " + colorElegido);
+    if(colorElegido === colorTitulo){
+        console.log('son iguales');
+        calculoPuntaje();
+
+    }
+    else{
+        console.log('perdiste')
+    }
+    
+
+}
+function obtengoColor(id, propiedad){
+    let element = elementoPorId(id);
+    let elementStyle = window.getComputedStyle(element);
+    let elementColor = elementStyle.getPropertyValue(propiedad);
+    //console.log("****" + elementColor);
+    return elementColor;
+
+}
+document.querySelectorAll("div.eleccioncol > button").forEach(function(elem) {
+    elem.addEventListener('click', creoId, false);
+    //console.log(elem);
+});
+function creoId() {
+    let btnId = this.id
+    //let btnvalue = this.value;
+    console.log("valor: " + btnId, + ' ' + typeof(btnId));
+    return btnId;
+}
+function accionDelJuego(){
+    insertoH2('texto');
+}
+
+comparoColores();
+
+/*********LOGIN************ */
+function accionModalInicio(){
+	// Se obtiene el nombre del jugador
+	const inputDom = elementoPorId("nombre_jugador");
+    const juego = elementoPorId("juego")
+	const nombreJugador = inputDom.value;
+  	//inicio el juego del div con la clase inicio_juego
+	const elementoInicio = elementoPorId("inicio_juego");
+	
+	//valido que el nombre no sea vacio 
+	const acceder = nombreJugador;
+	
+	if(acceder !== ""){
+	  //obtenido de la referencia
+	  ocultarElemento(elementoInicio);
+	  //fin obtenido de la referencia
+      mostrarElemento(juego);
+	  // Se muestra el nombre en pantalla y se guarda en localstorage
+	  const elementoNombre = elementoPorId("nombre_usuario");
+	  elementoNombre.textContent = nombreJugador;
+	  window.localStorage.setItem("nombre", nombreJugador);
+
+	}else{
+		const MuestroPopUP = elementoPorId("popup");
+		MuestroPopUP.innerHTML = `
+		<div id="popupBody">
+			<h2>Error </h2>
+			<a id="cerrar" href="#">&times;</a>
+			<div class="popupContent">
+				<p>Completa tu nombre</p>
+			</div>
+		</div>
+		`;
+		const alink = elementoPorId('pop_up');
+		seteoAtributos(alink,'href','#popup');
+		return;
+	}
+}
+
+  function seteoAtributos(elemento, atributo, valor){
+    elemento.setAttribute(atributo, valor);
+
+}
+function loseMenuPrincipal(){
+	const menuPrincipal = elementoPorId("menuppal");
+	seteoAtributos(menuPrincipal,'href','index.html#');
+	const inicio = elementoPorId("pop_up");
+	seteoAtributos(inicio,"href","#");
+
+	window.location.replace("index.html");
+	const nombreInicial = document.getElementById("nombre_jugador");
+	nombreInicial.value = '';
+	localStorage.clear();
+
+}
+
+const nombreJugadorStorage = window.localStorage.getItem("nombre");
+const elementoNombre = elementoPorId("nombre_jugador");
+elementoNombre.value = nombreJugadorStorage || "";
