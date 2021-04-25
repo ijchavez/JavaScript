@@ -54,6 +54,11 @@ body{
     background-size: cover;
 
 }
+.notes-app{
+    background-image: url('../images/post-it-notes-1284667_1280.jpg');
+    background-size: cover;
+
+}
 .bloquea{
     width: 300px;
     height: auto;
@@ -64,6 +69,7 @@ body{
     justify-content: center;
 
 }
+
 .resp{
     border-radius: 10px;
     width: 300px;
