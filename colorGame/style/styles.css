@@ -5,6 +5,7 @@ body{
     background-size: cover;
 
 }
+
 .tituloppal{
     width: 325px;
     height: 75px;
@@ -105,7 +106,7 @@ h1{
 
 }
 .amarillo{
-    background-color: rgb(212, 212, 3);
+    background-color: yellow;
     
 }
 .azul{
@@ -137,7 +138,7 @@ h1{
     
 }
 .celeste{
-    background-color: rgb(75, 193, 240);
+    background-color: skyblue;
     
 }
 
@@ -260,6 +261,10 @@ button, input {
     bottom: 0;
     left: 50%;
 }
+.ins-modal-button{
+    bottom:80px;
+
+}
 
 button, input {
     overflow: visible;
@@ -326,6 +331,33 @@ button, input {
     font-size: 24px;
 }
 #cerrar{
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    transition: all 200ms;
+    font-size: 30px;
+    font-weight: bold;
+    text-decoration: none;
+    color: whitesmoke;
+}
+#popupBodyInstrucciones{
+    width: 58%;
+    padding: 2%;
+    border-radius: 15px;
+    box-shadow: 0 0 5px #CCC;
+    background-image: linear-gradient(306deg, #e7e412, purple);
+    position: relative;
+    transition: all 5s ease-in-out;
+    margin: 20% auto;    
+    color: whitesmoke;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    font-size: 24px;
+}
+#close{
     position: absolute;
     top: 20px;
     right: 30px;

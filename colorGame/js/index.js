@@ -1,11 +1,13 @@
 const coloresTitulo = ['red', 'yellow', 'blue', 'green', 'violet', 'brown', 'plum', 'black', 'orange', 'skyblue'];
-const coloresNombre = ['Rojo', 'Amarillo', 'Azul', 'Verde', 'Violeta', 'Marrón', 'Rosa', 'Negro', 'Naranja', 'Azul'];
+const coloresNombre = ['Rojo', 'Amarillo', 'Azul', 'Verde', 'Violeta', 'Marrón', 'Rosa', 'Negro', 'Naranja', 'Celeste'];
 let estadoJuego = false;
 let totalTime = 100000;
+let puntaje = 0;
+
 
 function elementoPorId(id){
-    const elementoPorId = document.getElementById(id);
-    return elementoPorId;
+    const elemento = document.getElementById(id);
+    return elemento;
 
 }
 function elementoPorClase(unaClase){
@@ -44,25 +46,36 @@ function insertoH2(id){
     `;
 
 }
+function borroH2(id){
+    const titulo = elementoPorId(id);
+    const color = obtenerElementoAleatorio(coloresTitulo);
+    const nombre = obtenerElementoAleatorio(coloresNombre);
+    titulo.innerHTML = `
+    <h2 class="titulo"
+    id="titulo"></h2>
+    `;
+
+}
 function insertoBotones(id){
     const botones = elementoPorId(id);
     botones.innerHTML = `
     <div class="eleccioncol">
-        <button id = "rojo" class="caja rojo shadow"></button>
-        <button id = "amarillo" class="caja amarillo shadow"></button>
-        <button id = "azul" class="caja azul shadow"></button>
-        <button id = "verde" class="caja verde shadow"></button>
-        <button id = "violeta" class="caja violeta shadow"></button>
+        <button id = ${coloresNombre[0]} class="caja rojo shadow" onclick="creoId(this)"></button>
+        <button id = ${coloresNombre[1]} class="caja amarillo shadow" onclick="creoId(this)"></button>
+        <button id = ${coloresNombre[2]} class="caja azul shadow" onclick="creoId(this)"></button>
+        <button id = ${coloresNombre[3]} class="caja verde shadow" onclick="creoId(this)"></button>
+        <button id = ${coloresNombre[4]} class="caja violeta shadow" onclick="creoId(this)"></button>
     </div>
     <div class="eleccioncol">
-        <button id = "marron" class="caja marron shadow"></button>
-        <button id = "rosa" class="caja rosa shadow"></button>
-        <button id = "negro" class="caja negro shadow"></button>
-        <button id = "naranja" class="caja naranja shadow"></button>
-        <button id = "celeste" class="caja celeste shadow"></button>
+        <button id = ${coloresNombre[5]} class="caja marron shadow" onclick="creoId(this)"></button>
+        <button id = ${coloresNombre[6]} class="caja rosa shadow" onclick="creoId(this)"></button>
+        <button id = ${coloresNombre[7]} class="caja negro shadow" onclick="creoId(this)"></button>
+        <button id = ${coloresNombre[8]} class="caja naranja shadow" onclick="creoId(this)"></button>
+        <button id = ${coloresNombre[9]} class="caja celeste shadow" onclick="creoId(this)"></button>
     </div>
     `;
 }
+
 function insertoPuntaje(id){
     const elementoPuntaje = elementoPorId(id);
     const puntaje = calculoPuntaje();
@@ -73,9 +86,10 @@ function insertoPuntaje(id){
     `;
 
 }
+
 function calculoPuntaje(){
-    let puntaje = 0;
-    puntaje += puntaje;
+
+    puntaje = puntaje + 1;
     return puntaje;
 
 }
@@ -89,11 +103,12 @@ function comparoColores(colorUno, colorDos){
 
     if(colorTitulo === colorElegido){
         console.log('son iguales');
-        calculoPuntaje();
+        return true;
 
     }
     else{
         console.log('perdiste')
+        return false;
     }
 
 }
@@ -105,57 +120,77 @@ function obtengoColor(id, propiedad){
     return elementColor;
 
 }
-function recorrerElementos(elemento, evento, funcion){
+function recorrerElementos(elemento, evento){
     document.querySelectorAll(elemento).forEach(function(elem) {
-        elem.addEventListener(evento, funcion, false);
+        elem.addEventListener(evento, creoId, false);
         //console.log(elem);
     });
     
 }
-function creoId() {
+
+function creoId(valorId) {
     let elemento = "div.eleccioncol > button";
     let evento = 'click'
-    let funcionSinParentesis = creoId;
-    recorrerElementos(elemento, evento, funcionSinParentesis);
-    let btnId = '';
-    btnId = this.id;
+    recorrerElementos(elemento, evento);
+    let btnId = valorId.id;
     //let btnvalue = this.value;
+    //console.log("ID: " + btnId);
+    //if(!btnId){
+    //    btnId = "rojo";
+    //}
     console.log("ID: " + btnId);
-    if(!btnId){
-        btnId = "rojo";
+    let parametroColorElegido = btnId;
+    console.log(estadoJuego,"en accionDelJuego()");
+    let colorDeltitulo = obtengoColor('titulo', 'color');
+    let colorElegido =  obtengoColor(parametroColorElegido, 'background-color')
+    let comparacion = comparoColores(colorDeltitulo, colorElegido);
+    if(comparacion){
+        reseteoRelojEnJuego();
+        calculoPuntaje();
+        borroH2('texto');
+        insertoH2('texto');
+    }else{
+        gameOver();
+
     }
-    console.log("ID: " + btnId);
-    return btnId;
+    //return btnId;
 
 }
 function cambioEstadoJuego(){
     console.log("antes del click", estadoJuego);
-    let inicioJuego = elementoPorId('inicio-del-juego').onclick;
+    let inicioJuego = elementoPorId('inicio-del-juego');
 
     if(inicioJuego){
         estadoJuego = true;
         console.log(estadoJuego, "en cambioEstadoJuego()")
-        accionDelJuego();
 
     }
 
 }
-
+/*
 function accionDelJuego(){
-        const botones = elementoPorClase("caja");
-        console.log(botones);
-        if(botones.onclick === true){
-            console.log('holamundo')
-        };
-        let parametroColorElegido = creoId();
-        console.log(estadoJuego);
-        let colorDeltitulo = obtengoColor('titulo', 'color');
-        let colorElegido =  obtengoColor(parametroColorElegido, 'background-color')
-        comparoColores(colorDeltitulo, colorElegido);
-        insertoPuntaje('puntaje');
+        //const botones = elementoPorClase("caja");
+        //console.log(botones);
+        //if(botones.onclick === true){
+        //    console.log('holamundo')
+        // bot};
+        if(!btnId){
+            let parametroColorElegido = btnId;
+            console.log(estadoJuego,"en accionDelJuego()");
+            let colorDeltitulo = obtengoColor('titulo', 'color');
+            let colorElegido =  obtengoColor(parametroColorElegido, 'background-color')
+            comparoColores(colorDeltitulo, colorElegido);
+            insertoPuntaje('puntaje');
+        }else{
+            return;
+
+        }
+
 
 }
+*/
 function cambioEstadoActivoReloj(){
+    insertoH2('texto');
     cambioEstadoJuego();
     updateClock();
 
@@ -182,7 +217,6 @@ function accionModalInicio(){
 	  window.localStorage.setItem("nombre", nombreJugador);
 
       insertoBotones('eleccion');
-      insertoH2('texto');
 
 	}else{
 		const MuestroPopUP = elementoPorId("popup");
@@ -200,13 +234,35 @@ function accionModalInicio(){
 		return;
 	}
 }
+function muestroInstrucciones(){
+    const MuestroPopUP = elementoPorId("popupinstrucciones");
+    MuestroPopUP.innerHTML = `
+    <div id="popupBodyInstrucciones">
+        <h2>Instrucciones</h2>
+        <a id="close" href="#">&times;</a>
+        <div class="popupContent">
+            <p>
+                El juego consiste en hacer click sobre el color que posee la palabra
+                Si se acierta la palabra con el color clickeado antes del tiempo se
+                suma un punto y el reloj vuelve a resetearse.
+                Si se clickea sobre el boton incorrecto o el tiempo llega a cero el 
+                jugador pierde.
+            </p>
+        </div>
+    </div>
+    `;
+    const alink = elementoPorId('pop_up_instrucciones');
+    seteoAtributos(alink,'href','#popupinstrucciones');
+    return;
+}
 const accionModalFin = () => {
 	// Se oculta el modal de final
 	const elementoModalFinal = elementoPorId("fin_juego");
 	ocultarElemento(elementoModalFinal);
+    reseteoReloj();
     inicializacion()
     //loseMenuPrincipal();
-    reseteoReloj();
+
 
 };
 
@@ -236,20 +292,22 @@ const inicializacion = () => {
 /********CRONOMETRO*********** */
 
 //window.onload = updateClock;
+function gameOver(){
+    const elementoJuego = elementoPorId("juego");
+    ocultarElemento(elementoJuego);
 
+    const elementoModalFinal = elementoPorId("fin_juego");
+    mostrarElemento(elementoModalFinal);
+
+    const puntajeDom = elementoPorId("puntaje");
+    puntajeDom.textContent = "tu puntaje es de " + calculoPuntaje();
+
+}
 function updateClock() {
 
     document.getElementById('countdown').innerHTML = totalTime;
     if(totalTime==0){
-        const elementoJuego = elementoPorId("juego");
-		ocultarElemento(elementoJuego);
-
-		const elementoModalFinal = elementoPorId("fin_juego");
-		mostrarElemento(elementoModalFinal);
-
-		const puntajeDom = elementoPorId("puntaje");
-		puntajeDom.textContent = "tu puntaje es de " + calculoPuntaje();
-
+        gameOver()
 		return;
 
     }else{
@@ -258,8 +316,15 @@ function updateClock() {
 
     }
 }
+function reseteoRelojEnJuego(){
+    if(totalTime !== 0){
+        totalTime = 5;
+    }
+    return totalTime;
+
+}
 function reseteoReloj(){
-    if(totalTime == 0){
+    if(totalTime === 0){
         totalTime = 5;
     }
     return totalTime;

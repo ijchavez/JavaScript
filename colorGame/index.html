@@ -49,11 +49,14 @@
       <div id ='eleccion'class="eleccion">
 
       </div>
+
       <div>
         <button id ="inicio-del-juego"class='modal-button inicio_juego'onclick="cambioEstadoActivoReloj()">Inicio Juego</button>
       </div>
-      
-      
+      <button class="modal-button ins-modal-button"> 
+          <a id="pop_up_instrucciones" href="#popupinstrucciones" class="textbtn" onclick="muestroInstrucciones()">Instrucciones</a>
+      </button>
+      <div id="popupinstrucciones" class="overlay"></div>
   </section>
   <div id="fin_juego" class="modal-container-lose hide">
     <div class="blur-modal"></div>
