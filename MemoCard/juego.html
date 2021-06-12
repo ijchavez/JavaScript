@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
+ 
+    <title>Juego</title>
+    <link rel="stylesheet" href="css/juego.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+    </style>
+</head>
+<body onload="insertoBotones('imagenes')">
+
+		<h1>Browser Memo Card</h1>
+        <div id='puntaje' class="puntaje">
+
+        </div>
+        <div id="imagenes">
+
+        </div>
+        <button class="modal-button ins-modal-button"> 
+            <a id="pop_up_instrucciones" href="#popupinstrucciones" class="textbtn" onclick="muestroInstrucciones()">Instrucciones</a>
+        </button>
+        <div id="popupinstrucciones" class="overlay"></div>
+        <script src="js/juego.js"></script>
+</body>
+</html>

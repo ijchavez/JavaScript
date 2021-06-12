@@ -1,0 +1,357 @@
+body {
+  font-family: Roboto, sans-serif;
+  padding: 10px 20px;
+  background-image: url(../images/Navegador-web.png);
+  background-size: cover;
+}
+.eleccioncar {
+  height: 800px;
+  padding: 0 150px 0 150px;
+}
+h1 {
+  color: darkblue;
+  background-image: linear-gradient(90deg, whitesmoke, skyblue);
+  padding: 10px;
+  border-radius: 0 20px;
+  display: flex;
+  margin-left: 10px;
+  align-items: center;
+  justify-content: center;
+
+}
+.valor{
+    margin-right:10px;
+    font-size: 24px;
+
+}
+.puntaje {
+    height: 20px;
+    color: darkblue;
+    background-image: linear-gradient(90deg, whitesmoke, skyblue);
+    padding: 10px;
+    border-radius: 20px 0px;
+    display: flex;
+    margin-left: 10px;
+    align-items: center;
+    justify-content: center;
+
+}
+#imagenes {
+  margin-top: 10px;
+  margin-left: 0;
+  margin-right: 0;
+}
+.caja {
+  width: 150px;
+  height: 150px;
+  margin-left: auto;
+  margin-right: auto;
+  background-size: cover;
+}
+.selected {
+  border-color: blue;
+}
+.pareja {
+  border-color: green;
+}
+.chrome {
+  background-image: url(../images/chrome.png);
+  background-color: white;
+}
+.firefox {
+  background-image: url(../images/firefox.png);
+  background-color: white;
+
+}
+.edge {
+  background-image: url(../images/edge.jpeg);
+  background-color: white;
+
+}
+.opera {
+  background-image: url(../images/opera.jpeg);
+  background-color: white;
+
+}
+.safari {
+  background-image: url(../images/safari.gif);
+  background-color: white;
+
+}
+.konkeror {
+  background-image: url(../images/konkeror.png);
+  background-color: white;
+}
+.chrome1 {
+  background-image: url(../images/chrome.png);
+  background-color: white;
+
+}
+.firefox1 {
+  background-image: url(../images/firefox.png);
+  background-color: white;
+
+}
+.edge1 {
+  background-image: url(../images/edge.jpeg);
+  background-color: white;
+
+}
+.opera1 {
+  background-image: url(../images/opera.jpeg);
+  background-color: white;
+
+}
+.safari1 {
+  background-image: url(../images/safari.gif);
+  background-color: white;
+
+}
+.konkeror1 {
+  background-image: url(../images/konkeror.png);
+  background-color: white;
+
+}
+
+.brave {
+  background-image: url(../images/braveç.jpeg);
+  background-color: white;
+
+}
+.brave1 {
+  background-image: url(../images/braveç.jpeg);
+  background-color: white;
+
+}
+.dragonbrowser {
+  background-image: url(../images/dragonbrw.png);
+  background-color: white;
+
+}
+.dragonbrowser1 {
+  background-image: url(../images/dragonbrw.png);
+  background-color: white;
+
+}
+.flock {
+  background-image: url(../images/flock.png);
+  background-color: white;
+
+}
+.flock1 {
+  background-image: url(../images/flock.png);
+  background-color: white;
+
+}
+.gnomeweb {
+  background-image: url(../images/GNOME_Web_logo_\(2021-03\).svg.png);
+  background-color: white;
+
+}
+.gnomeweb1 {
+  background-image: url(../images/GNOME_Web_logo_\(2021-03\).svg.png);
+  background-color: white;
+
+}
+.torch {
+  background-image: url(../images/icon_torchbrowser.com_cd0ede.png);
+  background-color: white;
+
+}
+.torch1 {
+  background-image: url(../images/icon_torchbrowser.com_cd0ede.png);
+  background-color: white;
+
+}
+.ironbrowser {
+  background-image: url(../images/ironBrowser.jpeg);
+  background-color: white;
+
+}
+.ironbrowser1 {
+  background-image: url(../images/ironBrowser.jpeg);
+  background-color: white;
+
+}
+.mintbrowser {
+  background-image: url(../images/mintbrowser.jpeg);
+  background-color: white;
+
+}
+.mintbrowser1 {
+  background-image: url(../images/mintbrowser.jpeg);
+  background-color: white;
+
+}
+.minwebbrowser {
+  background-image: url(../images/minwebbrowser-logo.png);
+  background-color: white;
+
+}
+.minwebbrowser1 {
+  background-image: url(../images/minwebbrowser-logo.png);
+  background-color: white;
+
+}
+.netscape {
+  background-image: url(../images/netscape.jpeg);
+  background-color: white;
+
+}
+.netscape1 {
+  background-image: url(../images/netscape.jpeg);
+  background-color: white;
+
+}
+.dolphin {
+  background-image: url(../images/dolphin.jpg);
+  background-color: white;
+
+}
+.dolphin1 {
+  background-image: url(../images/dolphin.jpg);
+  background-color: white;
+
+}
+.dorso {
+  background-image: url(../images/dorso.png);
+
+}
+.modal-button {
+    transform: translate(-50%, 50%);
+    box-shadow: 0 0 10px white;
+    background-image: linear-gradient(29deg,  whitesmoke, skyblue);
+    border-radius: 42px;
+    position: absolute;
+    text-align: center;
+    font-weight: bold;
+    color: #ff7077;
+    font-size: 26px;
+    cursor: pointer;
+    width: 280px;
+    height: 60px;
+    border: none;
+    bottom: 0;
+    left: 50%;
+
+}
+.ins-modal-button{
+    bottom:150px;
+
+}
+button, input, optgroup, select, textarea {
+    font-family: inherit;
+    font-size: 100%;
+    line-height: 1.15;
+    margin: 0;
+
+}
+button, [type="button"], [type="reset"], [type="submit"] {
+    -webkit-appearance: button;
+
+}
+button, input {
+    overflow: visible;
+
+}
+.overlay {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.7);
+    transition: opacity 500ms;
+    visibility: hidden;
+    opacity: 0;
+
+}
+button, input {
+    overflow: visible;
+
+}
+.textbtn {
+    text-decoration: none;
+    color: darkblue;
+    font-size: 26px;
+    
+}
+.hide {
+    display: none !important;
+
+}
+#popupBody{
+    width: 30%;
+    padding: 2%;
+    border-radius: 15px;
+    box-shadow: 0 0 5px #CCC;
+    background-image: linear-gradient(29deg,  whitesmoke, skyblue);
+    position: relative;
+    transition: all 5s ease-in-out;
+    margin: 20% auto;    
+    color: whitesmoke;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    font-size: 24px;
+
+}
+#cerrar{
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    transition: all 200ms;
+    font-size: 30px;
+    font-weight: bold;
+    text-decoration: none;
+    color: darkblue;
+
+}
+#popupBodyInstrucciones{
+    width: 58%;
+    padding: 2%;
+    border-radius: 15px;
+    box-shadow: 0 0 5px #CCC;
+    background-image: linear-gradient(306deg,  whitesmoke, skyblue);
+    position: relative;
+    transition: all 5s ease-in-out;
+    margin: 20% auto;    
+    color: darkblue;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    font-size: 24px;
+
+}
+#close{
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    transition: all 200ms;
+    font-size: 30px;
+    font-weight: bold;
+    text-decoration: none;
+    color: darkblue;
+
+}
+.overlay:target {
+    visibility: visible;
+    opacity: 1;
+
+}
+.overlay {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.7);
+    transition: opacity 500ms;
+    visibility: hidden;
+    opacity: 0;
+
+}

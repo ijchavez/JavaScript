@@ -59,6 +59,11 @@ body{
     background-size: cover;
 
 }
+.memorygame{
+    background-image: url('../images/memocard.png');
+    background-size: cover;
+    
+}
 .bloquea{
     width: 300px;
     height: auto;
