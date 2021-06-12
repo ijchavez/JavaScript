@@ -18,12 +18,32 @@ const ocultarElemento = (elementoDOM) => {
 	elementoDOM.classList.add("hide");
 	elementoDOM.classList.remove("show");
 
-  }
-  const mostrarElemento = (elementoDOM) => {
+}
+const mostrarElemento = (elementoDOM) => {
 	elementoDOM.classList.add("show");
 	elementoDOM.classList.remove("hide");
 
-  }
+}
+function animarTitulo(){
+    let unId = 'colorgame';
+    let unaClase = 'colorgamea';
+    cambiaClase(elementoPorId(unId), unaClase)
+    //elementoPorId(unId).classList.toggle(unaClase);
+
+}
+function animarTituloOtro(){
+    let unId = 'colorgame';
+    let unaClase = 'colorgameb';
+    cambiaClase(elementoPorId(unId), unaClase)
+    //elementoPorId(unId).classList.toggle(unaClase);
+
+}
+function cambiaClase(elemento, clase){
+    elemento.classList.toggle(clase);
+
+}
+setInterval(animarTitulo,3000);
+setInterval(animarTituloOtro,7000);
 
 function obtenerElementoAleatorio(array){
     for (var n = 0; n < array.length; n++) {

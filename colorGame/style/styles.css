@@ -13,7 +13,7 @@ body{
     margin-right: auto;
     display: flex;
     align-items: center;
-    background-color: rgba(211, 211, 211, 0.63);
+    background-color: rgba(255, 255, 255, 0.733);
     padding: 0px 0px 11px 0px;
     border-radius: 5px;
     
@@ -41,6 +41,24 @@ h1{
     color: white;
     display: flex;
     align-items: center;
+
+}
+.colorgame{
+    background: linear-gradient(158deg, #863fa6 22%,#e12c61 50%,#f46f46 80%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+}
+.colorgamea{
+    background: linear-gradient(75deg, #10e409 33%,#3e693d 28%,#e5e908 61%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+}
+.colorgameb{
+    background: linear-gradient(230deg,#0dc1ee 16%,#d17c0d 49%,#e40909 59%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 
 }
 .texto{
