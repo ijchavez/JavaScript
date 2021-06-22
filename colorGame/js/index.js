@@ -1,10 +1,8 @@
 const coloresTitulo = ['red', 'yellow', 'blue', 'green', 'violet', 'brown', 'plum', 'black', 'orange', 'skyblue'];
 const coloresNombre = ['Rojo', 'Amarillo', 'Azul', 'Verde', 'Violeta', 'Marrón', 'Rosa', 'Negro', 'Naranja', 'Celeste'];
 let estadoJuego = false;
-let totalTime = 100000;
+let totalTime = 3;
 let puntaje = 0;
-
-
 function elementoPorId(id){
     const elemento = document.getElementById(id);
     return elemento;
@@ -13,6 +11,7 @@ function elementoPorId(id){
 function elementoPorClase(unaClase){
     const elementoPorClase = document.getElementsByClassName(unaClase);
     return elementoPorClase;
+
 }
 const ocultarElemento = (elementoDOM) => {
 	elementoDOM.classList.add("hide");
@@ -28,14 +27,12 @@ function animarTitulo(){
     let unId = 'colorgame';
     let unaClase = 'colorgamea';
     cambiaClase(elementoPorId(unId), unaClase)
-    //elementoPorId(unId).classList.toggle(unaClase);
 
 }
 function animarTituloOtro(){
     let unId = 'colorgame';
     let unaClase = 'colorgameb';
     cambiaClase(elementoPorId(unId), unaClase)
-    //elementoPorId(unId).classList.toggle(unaClase);
 
 }
 function cambiaClase(elemento, clase){
@@ -44,7 +41,6 @@ function cambiaClase(elemento, clase){
 }
 setInterval(animarTitulo,3000);
 setInterval(animarTituloOtro,7000);
-
 function obtenerElementoAleatorio(array){
     for (var n = 0; n < array.length; n++) {
             let i = Math.floor(Math.random() * array.length);
@@ -94,8 +90,8 @@ function insertoBotones(id){
         <button id = ${coloresNombre[9]} class="caja celeste shadow" onclick="creoId(this)"></button>
     </div>
     `;
-}
 
+}
 function insertoPuntaje(id){
     const elementoPuntaje = elementoPorId(id);
     const puntaje = calculoPuntaje();
@@ -106,9 +102,7 @@ function insertoPuntaje(id){
     `;
 
 }
-
 function calculoPuntaje(){
-
     puntaje = puntaje + 1;
     return puntaje;
 
@@ -136,14 +130,13 @@ function obtengoColor(id, propiedad){
     let element = elementoPorId(id);
     let elementStyle = window.getComputedStyle(element);
     let elementColor = elementStyle.getPropertyValue(propiedad);
-    //console.log("****" + elementColor);
     return elementColor;
 
 }
 function recorrerElementos(elemento, evento){
     document.querySelectorAll(elemento).forEach(function(elem) {
         elem.addEventListener(evento, creoId, false);
-        //console.log(elem);
+
     });
     
 }
@@ -152,15 +145,9 @@ function creoId(valorId) {
     let elemento = "div.eleccioncol > button";
     let evento = 'click'
     recorrerElementos(elemento, evento);
+    
     let btnId = valorId.id;
-    //let btnvalue = this.value;
-    //console.log("ID: " + btnId);
-    //if(!btnId){
-    //    btnId = "rojo";
-    //}
-    console.log("ID: " + btnId);
     let parametroColorElegido = btnId;
-    console.log(estadoJuego,"en accionDelJuego()");
     let colorDeltitulo = obtengoColor('titulo', 'color');
     let colorElegido =  obtengoColor(parametroColorElegido, 'background-color')
     let comparacion = comparoColores(colorDeltitulo, colorElegido);
@@ -173,7 +160,6 @@ function creoId(valorId) {
         gameOver();
 
     }
-    //return btnId;
 
 }
 function cambioEstadoJuego(){
@@ -187,37 +173,12 @@ function cambioEstadoJuego(){
     }
 
 }
-/*
-function accionDelJuego(){
-        //const botones = elementoPorClase("caja");
-        //console.log(botones);
-        //if(botones.onclick === true){
-        //    console.log('holamundo')
-        // bot};
-        if(!btnId){
-            let parametroColorElegido = btnId;
-            console.log(estadoJuego,"en accionDelJuego()");
-            let colorDeltitulo = obtengoColor('titulo', 'color');
-            let colorElegido =  obtengoColor(parametroColorElegido, 'background-color')
-            comparoColores(colorDeltitulo, colorElegido);
-            insertoPuntaje('puntaje');
-        }else{
-            return;
-
-        }
-
-
-}
-*/
 function cambioEstadoActivoReloj(){
     insertoH2('texto');
     cambioEstadoJuego();
     updateClock();
 
 }
-
-
-
 /*********LOGIN************ */
 function accionModalInicio(){
 	const inputDom = elementoPorId("nombre_jugador");
@@ -235,7 +196,6 @@ function accionModalInicio(){
 	  const elementoNombre = elementoPorId("nombre_usuario");
 	  elementoNombre.textContent = nombreJugador;
 	  window.localStorage.setItem("nombre", nombreJugador);
-
       insertoBotones('eleccion');
 
 	}else{
@@ -252,7 +212,9 @@ function accionModalInicio(){
 		const alink = elementoPorId('pop_up');
 		seteoAtributos(alink,'href','#popup');
 		return;
+
 	}
+
 }
 function muestroInstrucciones(){
     const MuestroPopUP = elementoPorId("popupinstrucciones");
@@ -274,6 +236,7 @@ function muestroInstrucciones(){
     const alink = elementoPorId('pop_up_instrucciones');
     seteoAtributos(alink,'href','#popupinstrucciones');
     return;
+
 }
 const accionModalFin = () => {
 	// Se oculta el modal de final
@@ -281,8 +244,6 @@ const accionModalFin = () => {
 	ocultarElemento(elementoModalFinal);
     reseteoReloj();
     inicializacion()
-    //loseMenuPrincipal();
-
 
 };
 
@@ -303,15 +264,11 @@ function loseMenuPrincipal(){
 
 }
 const inicializacion = () => {
-
     const juego = elementoPorId("juego")
 	mostrarElemento(juego);
-	
 
 };
 /********CRONOMETRO*********** */
-
-//window.onload = updateClock;
 function gameOver(){
     const elementoJuego = elementoPorId("juego");
     ocultarElemento(elementoJuego);
@@ -324,7 +281,6 @@ function gameOver(){
 
 }
 function updateClock() {
-
     document.getElementById('countdown').innerHTML = totalTime;
     if(totalTime==0){
         gameOver()
@@ -335,10 +291,12 @@ function updateClock() {
         setTimeout("updateClock()",1000);
 
     }
+    
 }
 function reseteoRelojEnJuego(){
     if(totalTime !== 0){
-        totalTime = 5;
+        totalTime = 3;
+
     }
     return totalTime;
 
@@ -346,12 +304,11 @@ function reseteoRelojEnJuego(){
 function reseteoReloj(){
     if(totalTime === 0){
         totalTime = 5;
+
     }
     return totalTime;
 
 }
-
-
 const nombreJugadorStorage = window.localStorage.getItem("nombre");
 const elementoNombre = elementoPorId("nombre_jugador");
 elementoNombre.value = nombreJugadorStorage || "";
