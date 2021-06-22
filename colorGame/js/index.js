@@ -110,11 +110,7 @@ function calculoPuntaje(){
 
 function comparoColores(colorUno, colorDos){
     let colorTitulo = colorUno;
-    console.log("Color del titulo " + colorTitulo);
-    console.log('*************');    
     let colorElegido = colorDos;
-    console.log("Color Elegido " + colorElegido);
-
     if(colorTitulo === colorElegido){
         console.log('son iguales');
         return true;
@@ -291,7 +287,7 @@ function updateClock() {
         setTimeout("updateClock()",1000);
 
     }
-    
+
 }
 function reseteoRelojEnJuego(){
     if(totalTime !== 0){
